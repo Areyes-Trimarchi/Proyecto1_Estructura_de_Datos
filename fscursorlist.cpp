@@ -1,8 +1,8 @@
 #include "fscursorlist.h"
 #include <iostream>
 
-FSCursorList(){
-
+FSCursorList::FSCursorList(int capacity){
+	
 }
 
 FSCursorList::~FSCursorList(){
