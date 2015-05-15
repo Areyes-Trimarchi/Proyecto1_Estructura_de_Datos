@@ -61,10 +61,34 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%4000),rand()%array->size;
-                        linked->insert(new Integer(rand()%4000),rand()%linked->size;
-                        cursor->insert(new Integer(rand()%4000),rand()%cursor->size;    
+                        array->insert(new Integer(rand()%4000),rand()%array->size);
+                        linked->insert(new Integer(rand()%4000),rand()%linked->size);
+                        cursor->insert(new Integer(rand()%4000),rand()%cursor->size);    
                     }
+
+                    start=clock_t();
+
+                    array->indexof(new Integer(rand()%4000));
+
+                    end=clock_t();
+                    cout<<"Array_time: "<<end-start<<" "<<endl;
+                    array->rest();
+
+                    start=clock_t();
+                    
+                    linked->indexof(new Integer(rand()%4000));
+                    
+                    end=clock_t();
+                    cout<<"linked_time: "<<end-start<<" "<<endl;
+                    linked->rest();
+
+                    start=clock_t();
+                    
+                    cursor->indexof(new Integer(rand()%4000));
+                    
+                    end=clock_t();
+                    cout<<"Cursor_time: "<<end-start<<" "<<endl;
+                    cursor->rest();
                }
                break;
             case 3:
