@@ -1,0 +1,17 @@
+proyecto: main.o fsarraylist.o fscursorlist.o linkelList.o integer.o object.o tdalist.o 
+	g++ main.o fsarraylist.o fscursorlist.o linkedlist.o integer.o object.o tdalist.o -o exe
+main.o: main.cpp
+	g++ main.cpp -c
+fsarrayList.o: fsarraylist.cpp fsarraylist.h tdalist.h object.h
+	g++ fsarraylist.cpp -c
+fscursolist.o: fscursorlist.cpp fscursorlist.h tdalist.h object.h
+	g++ fscursolist.cpp -c
+linkedlist.o: linkedlist.cpp linkedlist.h tdalist.h object.h
+	g++ linkedlist.cpp -c
+tdalist.o: tdalist.cpp tdalist.h object.h
+	g++ tdalist.cpp -c
+integer.o: integer.cpp integer.h object.h
+	g++ integer.cpp -c
+object.o: object.cpp object.h
+	g++ object.cpp -c
+
