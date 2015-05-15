@@ -14,7 +14,7 @@ class FSCursorList : public TDAList{
 		Row* rows;
 		int capacity;
 	public:
-		FSCursorList();
+		FSCursorList(int);
     	virtual ~FSCursorList();
     	virtual bool insert(Object*, int) ;
     	virtual int indexOf(Object*)const ;
