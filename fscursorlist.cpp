@@ -8,10 +8,10 @@ FSCursorList::FSCursorList(int capacity){
 }
 
 FSCursorList::~FSCursorList(){
-
+	delete[] rows;
 }
 
-bool FSCursorList::insert(Object* elemento, int pos){
+bool FSCursorList::insert(Object* elemento,int pos){
 	if(pos < 0 || pos > size)
 		return false;
 	if(pos == capacity)
@@ -21,6 +21,15 @@ bool FSCursorList::insert(Object* elemento, int pos){
 		rows[head].prev = -1;
 		rows[head].next = -1;
 		rows[head].data = elemento;
+	}else{
+		temp = head;
+		for(int i = 0; i < pos-1; i++)
+			temp = rows[head].next;
+		rows[neo].prev = temp;
+		rows[neo].next = rows[temp].next;
+		rows[temp].next = neo;
+		if(pos < size)
+			rows[rows[neo].next].prev = neo;
 	}
 }
 
