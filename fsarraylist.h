@@ -11,7 +11,7 @@ class FSArrayList : public Object{
 		virtual bool insert(Object*, int);
 		virtual int indexOf(Object*);
 		virtual Object* get(unsigned index)const;
-		virtual bool remove(unsigned pos);
+		virtual Object* remove(unsigned pos);
 		virtual int prev(int pos);
 		virtual int next(int pos) const;
 		virtual void reset();
