@@ -58,7 +58,7 @@ Object* FSArrayList::get(unsigned pos)const {
     return data[pos];    
 }
 
-bool FSArrayList::remove(unsigned pos) {
+Object* FSArrayList::remove(unsigned pos) {
     if (pos<0 || pos>=size)
         return NULL;
     Object* objeto = data[pos];
