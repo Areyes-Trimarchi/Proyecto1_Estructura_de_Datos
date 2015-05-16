@@ -201,6 +201,39 @@ int main(int argc, char *argv[])
                break;
             case 6:
                cout << "Last: "<<endl;
+               for (int i = 0; i < 4000; ++i)
+               {
+                   for (int j = 0; j < i; ++j)
+                    {
+                        array->insert(new Integer(rand()%4000),rand()%array->size);
+                        linked->insert(new Integer(rand()%4000),rand()%linked->size);
+                        cursor->insert(new Integer(rand()%4000),rand()%cursor->size);    
+                    }
+
+                    start=clock_t();
+
+                    array->last();
+
+                    end=clock_t();
+                    cout<<"Array_time: "<<end-start<<" "<<endl;
+                    array->rest();
+
+                    start=clock_t();
+                    
+                    linked->last();;
+                    
+                    end=clock_t();
+                    cout<<"linked_time: "<<end-start<<" "<<endl;
+                    linked->rest();
+
+                    start=clock_t();
+                    
+                    cursor->last();;
+                    
+                    end=clock_t();
+                    cout<<"Cursor_time: "<<end-start<<" "<<endl;
+                    cursor->rest();
+               }
                break;
             case 7:
                cout << "Salir"<<endl;
