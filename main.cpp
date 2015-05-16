@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
 
                     start=clock_t();
                     
-                    linked->first();;
+                    linked->first();
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
@@ -192,7 +192,7 @@ int main(int argc, char *argv[])
 
                     start=clock_t();
                     
-                    cursor->first();;
+                    cursor->first();
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
 
                     start=clock_t();
                     
-                    linked->last();;
+                    linked->last();
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
@@ -228,7 +228,7 @@ int main(int argc, char *argv[])
 
                     start=clock_t();
                     
-                    cursor->last();;
+                    cursor->last();
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
@@ -237,6 +237,7 @@ int main(int argc, char *argv[])
                break;
             case 7:
                cout << "Salir"<<endl;
+               
                flag=false;
                break;      
             }   
