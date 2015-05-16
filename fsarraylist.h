@@ -1,7 +1,8 @@
 #ifndef FSARRAYLIST_H
 #define FSARRAYLIST_H
+#include "tdalist.h"
 
-class FSArrayList : public Object{
+class FSArrayList : public TDAList{
 	protected:
 		Object** data;
 		unsigned int capacity;
@@ -9,10 +10,10 @@ class FSArrayList : public Object{
 		FSArrayList();
 		virtual ~FSArrayList();
 		virtual bool insert(Object*, int);
-		virtual int indexOf(Object*);
+		virtual int indexOf(Object*)const;
 		virtual Object* get(unsigned index)const;
 		virtual Object* remove(unsigned pos);
-		virtual int prev(int pos);
+		virtual int prev(int pos)const ;
 		virtual int next(int pos) const;
 		virtual void reset();
 		virtual Object* first()const;	

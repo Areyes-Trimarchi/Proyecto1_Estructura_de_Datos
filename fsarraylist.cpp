@@ -4,12 +4,12 @@
 #include <iostream>
 #include <cstdlib>
 
-using std::cin;
 using std::cout;
 using std::endl;
+using std::cerr;
 
 FSArrayList::FSArrayList(){
-    data=new Object[capacity];
+    data=new Object*[capacity];
     if(!data){
         cerr<<"No hay memoria suficiente"<<endl;
         exit(1);
