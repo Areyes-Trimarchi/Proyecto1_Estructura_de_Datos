@@ -61,22 +61,30 @@ Object* FSCursorList::get(unsigned index)const{
 	}
 }
 
-bool FSCursorList::erase(unsigned index){
+Object* FSCursorList::remove(unsigned index){
 	int temp = head;
 	if(index < 0 || index > size)
-		return false;
+		throw "out of bounds";
 	if(index == 0 || index < size){
 		temp = head;
-		for(int i = 0; i < index)
+		for(int i = 0; i < size-1)
 			temp = rows[temp]->next;
-		rows[rows[temp]->next]->prev = rows[temp]->prev;
-		rows[rows[temp]->prev]->next = rows[temp]->next;
+			if (temp == index)
+			{
+				Object* salida = rows[temp]->data;
+				rows[rows[temp]->next]->prev = rows[temp]->prev;
+				rows[rows[temp]->prev]->next = rows[temp]->next;
+				return salida;
+			}
 	}else{
 		temp = head;
 		for (int i = 0; i < size; i++)
 		{
 			temp = rows[temp]->next;
 		}
+		Object* salida = rows[temp]->data;
+		rows[rows[temp]->prev]->next = -1;
+		return salida;
 	}
 }
 
