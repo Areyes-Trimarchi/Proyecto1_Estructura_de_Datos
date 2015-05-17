@@ -80,13 +80,13 @@ bool FSCursorList::erase(unsigned index){
 	}
 }
 
-/*int FSCursorList::prev(int prev) const{
-
+int FSCursorList::prev(int prev) const{
+	return -1;
 }
 
 int FSCursorList::next(int next) const{
-
-}*/
+	return -1;
+}
 
 void FSCursorList::reset(){
 	~FSCursorList();
