@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 
 int menu()
 {
-    cout << "1. Inster\n2. Indexof\n3. Remove\n4. Get\n5. First\n6. Last\n7.Salir\nElija su Opcion: ";
+    cout << "1. Insert\n2. IndexOf\n3. Remove\n4. Get\n5. First\n6. Last\n7.Salir\nElija su Opcion: ";
     int opcion;
     cin >> opcion;
     return opcion;
