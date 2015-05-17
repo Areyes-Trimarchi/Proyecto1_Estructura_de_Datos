@@ -24,9 +24,9 @@ bool FSCursorList::insert(Object* elemento,int pos){
 	}else{
 		temp = head;
 		for(int i = 0; i < pos-1; i++)
-			temp = rows[head].next;
+			temp = rows[head]->next;
 		rows[neo]->prev = temp;
-		rows[neo]->next = rows[temp].next;
+		rows[neo]->next = rows[temp]->next;
 		rows[temp]->next = neo;
 		if(pos < size)
 			rows[rows[neo]->next]->prev = neo;
@@ -36,7 +36,7 @@ bool FSCursorList::insert(Object* elemento,int pos){
 int FSCursorList::indexOf(Object* elemento)const{
 	int temp = head;
 	for (int i = 0; i < size; i++){
-		temp = rows[temp].next;
+		temp = rows[temp]->next;
 		if (temp == index)
 		{
 			return temp;
@@ -114,7 +114,7 @@ void FSCursorList::print()const{
 	temp = head;
 	for (int i = 0; i < size; i++)
 	{
-		temp = rows[temp].next;
+		temp = rows[temp]->next;
 		cout << i << ". " << temp[rows]->data << endl;
 	}
 }
