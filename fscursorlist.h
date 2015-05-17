@@ -20,8 +20,9 @@ class FSCursorList : public TDAList{
     	virtual int indexOf(Object*)const ;
     	virtual Object* get(unsigned)const ;
     	virtual bool erase(unsigned) ;
-    	virtual int prev(int) const ;
+    	/*virtual int prev(int) const ;
     	virtual int next(int) const ;
+        */
     	virtual void reset() ;
     	virtual Object* first()const ;
     	virtual Object* last()const ;
