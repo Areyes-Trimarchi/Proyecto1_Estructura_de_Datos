@@ -1,5 +1,8 @@
 #include "fscursorlist.h"
 #include <iostream>
+#include <sstream>
+
+using std::stringstream;
 
 FSCursorList::FSCursorList(int capacity){
 	rows = new Row[capacity];
@@ -70,7 +73,7 @@ Object* FSCursorList::remove(unsigned index){
 		throw "out of bounds";
 	if(index == 0 || index < size){
 		temp = head;
-		for(int i = 0; i < size-1){
+		for(int i = 0; i < size-1; i++){
 			temp = rows[temp].next;
 			if (temp == index)
 			{
@@ -102,7 +105,7 @@ int FSCursorList::next(int next) const{
 }
 
 void FSCursorList::reset(){
-	~FSCursorList();
+	
 }
 
 Object* FSCursorList::first()const{
@@ -130,11 +133,12 @@ Object* FSCursorList::last()const{
 }
 
 void FSCursorList::print()const{
-	temp = head;
+	int temp = head;
+	stringstream ss;
 	for (int i = 0; i < size; i++)
 	{
 		temp = rows[temp].next;
-		cout << i << ". " << temp[rows].data << endl;
+		ss << i << ". " << temp[rows].data;
 	}
 }
 
