@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 using std::cerr;
 
-FSArrayList::FSArrayList(){
+FSArrayList::FSArrayList(int capacidad):capacity (capacidad){
     data=new Object*[capacity];
     if(!data){
         cerr<<"No hay memoria suficiente"<<endl;

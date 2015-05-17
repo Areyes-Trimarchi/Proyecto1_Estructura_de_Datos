@@ -7,7 +7,7 @@
 #include "fscursorlist.h"
 #include "fsarraylist.h"
 
-using namespace std
+using namespace std;
 
 int menu();
 

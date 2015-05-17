@@ -7,7 +7,7 @@ class FSArrayList : public TDAList{
 		Object** data;
 		unsigned int capacity;
 	public:
-		FSArrayList();
+		FSArrayList(int);
 		virtual ~FSArrayList();
 		virtual bool insert(Object*, int);
 		virtual int indexOf(Object*)const;
