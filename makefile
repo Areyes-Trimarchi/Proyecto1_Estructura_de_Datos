@@ -1,4 +1,4 @@
-proyecto: main.o fsarraylist.o fscursorlist.o linkelList.o integer.o object.o tdalist.o 
+proyecto: main.o fsarraylist.o fscursorlist.o linkedlist.o integer.o object.o tdalist.o 
 	g++ main.o fsarraylist.o fscursorlist.o linkedlist.o integer.o object.o tdalist.o -o exe
 main.o: main.cpp
 	g++ main.cpp -c

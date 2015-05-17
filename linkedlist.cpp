@@ -104,33 +104,33 @@ Object* LinkedList::get(unsigned index)const {
 */
 Object* LinkedList::remove(unsigned pos) {
     // Si es una posición Inválida
-    Object* data;
+   Object* salida;
     DLLNode* tmp;
     if (pos < 0 || pos >= size)
         return NULL; // Indicar fracaso en la operación
     tmp=head;
     if(pos==0){
-        data=tmp->data;
-        tmp->data=NULL;
-        head=tmp->next;
-        tmp->next=NULL;
+        salida=tmp->getData();
+        tmp->setData(NULL);
+        head=tmp->getNext();
+        tmp->setNext(NULL);
         delete tmp;
     }else{
         for (int i = 0; i < pos-1; ++i)
         {
-            tmp=tmp->next;
+            tmp=tmp->getNext();
         }
-        DLLNode* tmp_2=tmp->next;
-        tmp->next=tmp_2->next;
-        data=tmp_2->data;
-        tmp_2->data=NULL;
-        tmp_2->next=NULL;
+        DLLNode* tmp_2=tmp->getNext();
+        tmp->setNext(tmp_2->getNext());
+        salida=tmp_2->getData();
+        tmp_2->setData(NULL);
+        tmp_2->setNext(NULL);
         delete tmp_2;
         delete tmp;
-        tmp_2->next=NULL;
+        tmp_2->setNext(NULL);
     }
     size--; // Disminuir Tamaño
-    return data; // Indicar Éxito
+    return salida; // Indicar Éxito
 }
 // Retorna el anterior a la posición pos
 // Implementado de la manera más sencilla, pues podría haberse usado
