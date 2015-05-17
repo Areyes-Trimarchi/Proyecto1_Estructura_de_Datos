@@ -54,7 +54,7 @@ int FSCursorList::indexOf(Object* elemento)const{
 Object* FSCursorList::get(unsigned index)const{
 	int temp = head;
 	if(index < 0 || index > size)
-		trow "out of bounds";
+		throw "out of bounds";
 	for (int i = 0; i < size; i++){
 		temp = rows[temp].next;
 		if (temp == index)
@@ -70,7 +70,7 @@ Object* FSCursorList::remove(unsigned index){
 		throw "out of bounds";
 	if(index == 0 || index < size){
 		temp = head;
-		for(int i = 0; i < size-1)
+		for(int i = 0; i < size-1){
 			temp = rows[temp].next;
 			if (temp == index)
 			{
@@ -79,6 +79,7 @@ Object* FSCursorList::remove(unsigned index){
 				rows[rows[temp].prev].next = rows[temp].next;
 				return salida;
 			}
+		}
 	}else{
 		temp = head;
 		for (int i = 0; i < size; i++)
