@@ -8,7 +8,13 @@ FSCursorList::FSCursorList(int capacity){
 }
 
 FSCursorList::~FSCursorList(){
-	delete[] rows;
+	temp = head;
+	for (int i = 0; i < size; i++)
+	{
+		temp = rows[temp]->next;
+		delete rows[temp]->data;
+	}
+	
 }
 
 bool FSCursorList::insert(Object* elemento,int pos){
@@ -74,13 +80,13 @@ bool FSCursorList::erase(unsigned index){
 	}
 }
 
-int FSCursorList::prev(int prev) const{
+/*int FSCursorList::prev(int prev) const{
 
 }
 
 int FSCursorList::next(int next) const{
 
-}
+}*/
 
 void FSCursorList::reset(){
 	~FSCursorList();
