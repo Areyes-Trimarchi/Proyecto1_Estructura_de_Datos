@@ -102,47 +102,35 @@ Object* LinkedList::get(unsigned index)const {
 * desenlazarlo de la lista y luego liberar su memoria, pues en caso contrario
 * liberaríamos todos los elementos siguiente a este elemento.
 */
-bool LinkedList::erase(unsigned pos) {
+Object* LinkedList::remove(unsigned pos) {
     // Si es una posición Inválida
-    if (pos < 0 || pos >= size)
-        return false; // Indicar fracaso en la operación
+    Object* data;
     DLLNode* tmp;
-    if (pos == 0){ // Desea Borrar la Cabeza
-        // Desenlazar
-        tmp = head->getNext();
-        tmp->setPrev(NULL);
-        head->setNext(NULL);
-        // Liberar Memoria
-        delete head;
-        // Actualizar head
-        head = tmp;
-    }else if (pos == size - 1){ // Desea Borrar el último
-        // Recorrer hasta el final
-        tmp = head;
-        for (int i=1; i<pos; i++)
-           tmp = tmp->getNext();
-        // Desenlazar
-        DLLNode* toErase = tmp->getNext();
-        tmp->setNext(NULL);
-        toErase->setPrev(NULL);
-        // Liberar Memoria
-        delete toErase;
-    }else { // Desea Borrar de enmedio
-        // Recorrer hasta el nodo anterior al que se desea borrar
-        tmp = head;
-        for (int i=1; i<pos; i++)
-           tmp = tmp->getNext();
-        // Desenlazar
-        DLLNode* toErase = tmp->getNext();
-        tmp->setNext(toErase->getNext());
-        toErase->getNext()->setPrev(tmp);
-        toErase->setNext(NULL);
-        toErase->setPrev(NULL);
-        // Liberar Memoria
-        delete toErase;
+    if (pos < 0 || pos >= size)
+        return NULL; // Indicar fracaso en la operación
+    tmp=head;
+    if(pos==0){
+        data=tmp->data;
+        tmp->data=NULL;
+        head=tmp->next;
+        tmp->next=NULL;
+        delete tmp;
+    }else{
+        for (int i = 0; i < pos-1; ++i)
+        {
+            tmp=tmp->next;
+        }
+        DLLNode* tmp_2=tmp->next;
+        tmp->next=tmp_2->next;
+        data=tmp_2->data;
+        tmp_2->data=NULL;
+        tmp_2->next=NULL;
+        delete tmp_2;
+        delete tmp;
+        tmp_2->next=NULL;
     }
     size--; // Disminuir Tamaño
-    return true; // Indicar Éxito
+    return data; // Indicar Éxito
 }
 // Retorna el anterior a la posición pos
 // Implementado de la manera más sencilla, pues podría haberse usado

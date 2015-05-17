@@ -119,7 +119,3 @@ bool FSArrayList::isEmpty()const {
 int FSArrayList::getCapacity()const{
     return capacity;
 }
-
-int FSArrayList::getSize()const{
-    return size;
-}

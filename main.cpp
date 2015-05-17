@@ -30,29 +30,29 @@ int main(int argc, char *argv[])
                     start=clock_t();
                     for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
                     }
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
                     for (int j = 0; j < i; ++j)
                     {
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
                     }
                     end=clock_t();
                     cout<<"Linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
                     for (int j = 0; j < i; ++j)
                     {
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size);
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());
                     }
                     end=clock_t();
                     cout<<"Cursror_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                 }
                 break;
             case 2:
@@ -61,34 +61,34 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size);    
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());    
                     }
 
                     start=clock_t();
 
-                    array->indexof(new Integer(rand()%1000));
+                    array->indexOf(new Integer(rand()%1000));
 
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
 
-                    linked->indexof(new Integer(rand()%1000));
+                    linked->indexOf(new Integer(rand()%1000));
 
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
 
-                    cursor->indexof(new Integer(rand()%1000));
+                    cursor->indexOf(new Integer(rand()%1000));
 
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                }
                break;
             case 3:
@@ -97,18 +97,18 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size); 
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
                     }
 
                     start=clock_t();
 
-                    array->remove(and()%999);
+                    array->remove(rand()%999);
 
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
                     
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
                     
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                }
                break;
             case 4:
@@ -133,9 +133,9 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size); 
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
                     }
 
                     start=clock_t();
@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
 
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
 
@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
                     
@@ -160,7 +160,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                }
                break;
             case 5:
@@ -169,9 +169,9 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size); 
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
                     }
 
                     start=clock_t();
@@ -180,7 +180,7 @@ int main(int argc, char *argv[])
 
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
                     
@@ -188,7 +188,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
                     
@@ -196,7 +196,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                }
                break;
             case 6:
@@ -205,9 +205,9 @@ int main(int argc, char *argv[])
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->size);
-                        linked->insert(new Integer(rand()%1000),rand()%linked->size);
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->size);  
+                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());  
                     }
 
                     start=clock_t();
@@ -216,7 +216,7 @@ int main(int argc, char *argv[])
 
                     end=clock_t();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
-                    array->rest();
+                    array->reset();
 
                     start=clock_t();
                     
@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
-                    linked->rest();
+                    linked->reset();
 
                     start=clock_t();
                     
@@ -232,7 +232,7 @@ int main(int argc, char *argv[])
                     
                     end=clock_t();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
-                    cursor->rest();
+                    cursor->reset();
                }
                break;
             case 7:

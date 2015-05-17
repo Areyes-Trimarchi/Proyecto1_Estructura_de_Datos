@@ -22,7 +22,7 @@ class FSArrayList : public TDAList{
 		virtual bool isFull()const;
 		virtual bool isEmpty()const;
 		virtual int getCapacity()const;
-		virtual int getSize()const;
+		int getSize()const;
 };
 
 #endif
