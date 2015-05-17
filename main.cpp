@@ -18,240 +18,291 @@ int main(int argc, char *argv[])
     TDAList* array = new FSArrayList(1000);
     TDAList* linked = new LinkedList();
     TDAList* cursor = new FSCursorList(1000);
-    bool flag = true;
-    while (flag)
+    int flag=menu();
+    int elemento;
+    int pos;
+    while (flag!=7)
     {
-        switch(menu())
+        switch(flag)
         {
             case 1:
+            {
                 cout<<"Insertar: "<<endl;
                 for (int i = 0; i < 1000; ++i)
                 {
-                    start=clock_t();
+                    start=clock();
                     for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
                     }
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
                     for (int j = 0; j < i; ++j)
                     {
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
                     }
-                    end=clock_t();
+                    end=clock();
                     cout<<"Linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
                     for (int j = 0; j < i; ++j)
                     {
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());
+                        elemento=rand()%1000;
+                        pos=rand()%(cursor->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);
                     }
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursror_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                 }
                 break;
+            }    
             case 2:
+            {
                cout << "IndexOf: "<<endl;
                for (int i = 0; i < 1000; ++i)
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());    
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);    
                     }
 
-                    start=clock_t();
+                    start=clock();
 
                     array->indexOf(new Integer(rand()%1000));
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
 
                     linked->indexOf(new Integer(rand()%1000));
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
 
                     cursor->indexOf(new Integer(rand()%1000));
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                }
                break;
+            }   
             case 3:
+            {
                cout << "Remove: "<<endl;
                for (int i = 0; i < 1000; ++i)
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);  
                     }
 
-                    start=clock_t();
+                    start=clock();
 
                     array->remove(rand()%999);
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     linked->remove(rand()%999);
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     cursor->remove(rand()%999);
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                }
                break;
+            }   
             case 4:
+            {
                cout << "Get: "<<endl;
                for (int i = 0; i < 1000; ++i)
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);   
                     }
 
-                    start=clock_t();
+                    start=clock();
 
                     array->get(rand()%999);
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
 
                     linked->get(rand()%999);
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     cursor->get(rand()%999);
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                }
                break;
+            }   
             case 5:
+            {
                cout << "First: "<<endl;
                for (int i = 0; i < 1000; ++i)
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize()); 
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);   
                     }
 
-                    start=clock_t();
+                    start=clock();
 
                     array->first();
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     linked->first();
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     cursor->first();
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                }
                break;
+            }   
             case 6:
+            {
                cout << "Last: "<<endl;
                for (int i = 0; i < 1000; ++i)
                {
                    for (int j = 0; j < i; ++j)
                     {
-                        array->insert(new Integer(rand()%1000),rand()%array->getSize());
-                        linked->insert(new Integer(rand()%1000),rand()%linked->getSize());
-                        cursor->insert(new Integer(rand()%1000),rand()%cursor->getSize());  
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        array->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(linked->getSize()+1);
+                        linked->insert(new Integer(elemento),pos);
+                        elemento=rand()%1000;
+                        pos=rand()%(array->getSize()+1);
+                        cursor->insert(new Integer(elemento),pos);    
                     }
 
-                    start=clock_t();
+                    start=clock();
 
                     array->last();
 
-                    end=clock_t();
+                    end=clock();
                     cout<<"Array_time: "<<end-start<<" "<<endl;
                     array->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     linked->last();
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"linked_time: "<<end-start<<" "<<endl;
                     linked->reset();
 
-                    start=clock_t();
+                    start=clock();
                     
                     cursor->last();
                     
-                    end=clock_t();
+                    end=clock();
                     cout<<"Cursor_time: "<<end-start<<" "<<endl;
                     cursor->reset();
                }
                break;
-            case 7:
-               cout << "Salir"<<endl;
-               
-               flag=false;
-               break;      
             }   
+            case 7:
+            {
+               cout << "Salir"<<endl;
+               flag=-1;
+               break; 
+            }        
+        }      
     }
-    delete[] array;
-    delete[] linked;
-    delete[] cursor;
+    delete array;
+    delete linked;
+    delete cursor;
     return 0;
 }
 
 int menu()
 {
-    cout << "1. Insert\n2. IndexOf\n3. Remove\n4. Get\n5. First\n6. Last\n7.Salir\nElija su Opcion: ";
     int opcion;
+    cout << "1. Insert\n2. IndexOf\n3. Remove\n4. Get\n5. First\n6. Last\n7.Salir\nElija su Opcion: ";
     cin >> opcion;
     return opcion;
 }
