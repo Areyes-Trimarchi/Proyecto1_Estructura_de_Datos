@@ -44,7 +44,7 @@ int FSCursorList::indexOf(Object* elemento)const{
 	int temp = head;
 	for (int i = 0; i < size; i++){
 		temp = rows[temp].next;
-		if (temp == index)
+		if (elemento == rows[temp].data)
 		{
 			return temp;
 		}
