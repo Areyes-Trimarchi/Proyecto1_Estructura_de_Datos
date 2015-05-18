@@ -163,7 +163,7 @@ Object* LinkedList::last()const {
     if (!head)
         return NULL;
     DLLNode* tmp = head;
-    for (int i=0; i < size; i++)
+    for (int i=0; i < size-1; i++)
         tmp = tmp->getNext();
     return tmp->getData();
 }
